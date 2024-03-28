@@ -1,30 +1,57 @@
-# React + TypeScript + Vite
+# Task Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The "Task Manager" project is a simple web application for managing tasks. It allows you to create, view, update, and delete tasks by interacting with an API. The project uses React, TypeScript, and an external API to perform CRUD (Create, Read, Update, Delete) operations with tasks.
 
-Currently, two official plugins are available:
+## Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To get started with the project, follow these steps:
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
+- Clone the Repository: Clone the repository to your local machine using the following command:
 
 ```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+git clone <repository-url>
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Install Dependencies: Navigate to the project directory and install the dependencies using npm:
+
+```js
+npm install
+```
+
+- Run the Development Server: Start the development server to run the project locally:
+
+```js
+npm run dev
+```
+
+- Open in Browser: Once the server is running, open your web browser and navigate to http://127.0.0.1:5173/ to view the project.
+
+## Features
+- Modern Tooling: Utilizes Vite for fast development and builds.
+- TypeScript: Provides type safety and enhanced developer experience.
+- React: Frontend framework for building user interfaces.
+- Material-UI: Integrates Material-UI for ready-to-use UI components and styles.
+- Sass (SCSS): Powerful CSS preprocessor for styling.
+
+## Project Structure
+
+```js
+todos/
+│
+├── public/             # Public assets
+├── src/                # Source files
+│   ├── components/     # React components
+│   ├── interfaces/     # TypeScript interfaces
+│   ├── App.tsx         # Main component
+│   └── index.tsx       # Entry point
+├── .gitignore          # Git ignore file
+├── package.json        # NPM package file
+├── README.md           # Project README file
+└── tsconfig.json       # TypeScript configuration
+```
+
+## Contributing
+Contributions to the project are welcome. Feel free to submit bug reports, feature requests, or pull requests.
+
+## License
+This project is licensed under the MIT License.
