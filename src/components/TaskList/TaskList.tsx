@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Task } from '../../interfaces';
-import style from './TaskList.module.scss'
+import style from './TaskList.module.scss';
 import DeleteIcon from '@mui/icons-material/Delete';
 import CreateIcon from '@mui/icons-material/Create';
 import BasicModal from '../BasicModal/BasicModal';
@@ -12,10 +12,10 @@ interface TaskListProps {
 }
 
 const TaskList: React.FC<TaskListProps> = ({ tasks, updateTask, deleteTask }) => {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const [openTaskId, setOpenTaskId] = useState<number | null>(null); // Состояние для открытой задачи
 
+  const handleOpenModal = (taskId: number) => setOpenTaskId(taskId);
+  const handleCloseModal = () => setOpenTaskId(null);
 
   return (
     <div className={style.wrapper}>
@@ -30,12 +30,19 @@ const TaskList: React.FC<TaskListProps> = ({ tasks, updateTask, deleteTask }) =>
             {task.title}
           </p>
           <div>
-            <CreateIcon onClick={handleOpen} />
+            <CreateIcon onClick={() => handleOpenModal(task.id)} />
             <DeleteIcon onClick={() => deleteTask(task.id)} />
           </div>
         </div>
       ))}
-      {open && <BasicModal open={open} handleClose={handleClose} />}
+
+      {openTaskId !== null && (
+        <BasicModal
+          taskId={openTaskId}
+          updateTask={updateTask}
+          handleClose={handleCloseModal}
+        />
+      )}
     </div>
   );
 };
