@@ -27,11 +27,12 @@ npm run dev
 - Open in Browser: Once the server is running, open your web browser and navigate to http://127.0.0.1:5173/ to view the project.
 
 ## Features
-- Modern Tooling: Utilizes Vite for fast development and builds.
-- TypeScript: Provides type safety and enhanced developer experience.
-- React: Frontend framework for building user interfaces.
-- Material-UI: Integrates Material-UI for ready-to-use UI components and styles.
-- Sass (SCSS): Powerful CSS preprocessor for styling.
+- **Modern Tooling:** Utilizes Vite for fast development and builds.
+- **TypeScript:** Provides type safety and enhanced developer experience.
+- **React:** Frontend framework for building user interfaces.
+- **Material-UI:** Integrates Material-UI for ready-to-use UI components and styles.
+- **Sass (SCSS):** Powerful CSS preprocessor for styling.
+- **Prettier:** Code formatter for consistent code style.
 
 ## Project Structure
 

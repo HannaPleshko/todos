@@ -12,10 +12,10 @@ interface TaskListProps {
 }
 
 const TaskList: React.FC<TaskListProps> = ({ tasks, updateTask, deleteTask }) => {
-  const [openTaskId, setOpenTaskId] = useState<number | null>(null); // Состояние для открытой задачи
+  const [openTask, setOpenTask] = useState<Task | null>(null);
 
-  const handleOpenModal = (taskId: number) => setOpenTaskId(taskId);
-  const handleCloseModal = () => setOpenTaskId(null);
+  const handleOpenModal = (task: Task) => setOpenTask(task);
+  const handleCloseModal = () => setOpenTask(null);
 
   return (
     <div className={style.wrapper}>
@@ -30,15 +30,15 @@ const TaskList: React.FC<TaskListProps> = ({ tasks, updateTask, deleteTask }) =>
             {task.title}
           </p>
           <div>
-            <CreateIcon onClick={() => handleOpenModal(task.id)} />
+            <CreateIcon onClick={() => handleOpenModal(task)} />
             <DeleteIcon onClick={() => deleteTask(task.id)} />
           </div>
         </div>
       ))}
 
-      {openTaskId !== null && (
+      {openTask && (
         <BasicModal
-          taskId={openTaskId}
+          task={openTask}
           updateTask={updateTask}
           handleClose={handleCloseModal}
         />

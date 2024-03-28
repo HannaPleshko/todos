@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import TextField from '@mui/material/TextField';
@@ -19,36 +19,17 @@ const style = {
 
 interface BasicModalProps {
     handleClose: () => void;
-    taskId: number;
+    task: Task;
     updateTask: (task: Task) => void;
 }
 
-const BasicModal: React.FC<BasicModalProps> = ({ handleClose, taskId, updateTask }) => {
-    const [updatedTitle, setUpdatedTitle] = useState('');
-    const [task, setTask] = useState<Task | null>(null);
-
-    const fetchTask = async () => {
-        try {
-            debugger
-            const response = await fetch(`https://dummyjson.com/todos/${taskId}`);
-            const data = await response.json();
-            setTask(data);
-            setUpdatedTitle(data.title);
-        } catch (error) {
-            console.error('Error fetching task:', error);
-        }
-    };
-
-    useEffect(() => {
-        fetchTask();
-    }, [taskId]);
+const BasicModal: React.FC<BasicModalProps> = ({ handleClose, task, updateTask }) => {
+    const [updatedTitle, setUpdatedTitle] = useState(task.title);
 
     const updateListTasks = () => {
-        if (task) {
-            const updatedTask: Task = { ...task, title: updatedTitle };
-            updateTask(updatedTask);
-            handleClose();
-        }
+        const updatedTask: Task = { ...task, title: updatedTitle };
+        updateTask(updatedTask);
+        handleClose();
     };
 
     return (
