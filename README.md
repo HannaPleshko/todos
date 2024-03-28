@@ -2,6 +2,11 @@
 
 The "Task Manager" project is a simple web application for managing tasks. It allows you to create, view, update, and delete tasks by interacting with an API. The project uses React, TypeScript, and an external API to perform CRUD (Create, Read, Update, Delete) operations with tasks.
 
+## Application Link
+
+The application is hosted at: [https://ornate-lollipop-5553e6.netlify.app/](https://ornate-lollipop-5553e6.netlify.app/)
+
+
 ## Getting Started
 
 To get started with the project, follow these steps:
