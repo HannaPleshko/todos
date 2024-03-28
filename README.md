@@ -38,6 +38,7 @@ npm run dev
 - **Material-UI:** Integrates Material-UI for ready-to-use UI components and styles.
 - **Sass (SCSS):** Powerful CSS preprocessor for styling.
 - **Prettier:** Code formatter for consistent code style.
+- **Husky:** Git hooks made easy.
 
 ## Project Structure
 
