@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Task } from '../../interfaces';
 import { Button, TextField } from '@mui/material';
-import style from './TaskForm.module.scss'
+import style from './TaskForm.module.scss';
 
 interface TaskFormProps {
   addTask: (task: Task) => void;
@@ -20,10 +20,18 @@ const TaskForm: React.FC<TaskFormProps> = ({ addTask }) => {
   return (
     <>
       <form className={style.form} onSubmit={handleSubmit}>
-        <TextField multiline fullWidth type="text"
+        <TextField
+          multiline
+          fullWidth
+          type="text"
           value={title}
-          onChange={e => setTitle(e.target.value)} label="Enter task title" variant="outlined" />
-        <Button type="submit" variant="contained">Add Task</Button>
+          onChange={e => setTitle(e.target.value)}
+          label="Enter task title"
+          variant="outlined"
+        />
+        <Button type="submit" variant="contained">
+          Add Task
+        </Button>
       </form>
     </>
   );

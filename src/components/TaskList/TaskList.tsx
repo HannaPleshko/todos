@@ -22,11 +22,7 @@ const TaskList: React.FC<TaskListProps> = ({ tasks, updateTask, deleteTask }) =>
       {tasks.map(task => (
         <div key={task.id} className={style.item}>
           <p>
-            <input
-              type="checkbox"
-              checked={task.completed}
-              onChange={() => updateTask({ ...task, completed: !task.completed })}
-            />
+            <input type="checkbox" checked={task.completed} onChange={() => updateTask({ ...task, completed: !task.completed })} />
             {task.title}
           </p>
           <div>
@@ -36,13 +32,7 @@ const TaskList: React.FC<TaskListProps> = ({ tasks, updateTask, deleteTask }) =>
         </div>
       ))}
 
-      {openTask && (
-        <BasicModal
-          task={openTask}
-          updateTask={updateTask}
-          handleClose={handleCloseModal}
-        />
-      )}
+      {openTask && <BasicModal task={openTask} updateTask={updateTask} handleClose={handleCloseModal} />}
     </div>
   );
 };

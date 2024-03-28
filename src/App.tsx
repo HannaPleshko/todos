@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import TaskList from './components/TaskList/TaskList';
 import TaskForm from './components/TaskForm/TaskForm';
 import { Task } from './interfaces';
-import style from './App.module.scss'
+import style from './App.module.scss';
 
 const API_URL = 'https://jsonplaceholder.typicode.com/todos';
 
@@ -49,9 +49,7 @@ const App: React.FC = () => {
         body: JSON.stringify(updatedTask),
       });
       if (response.ok) {
-        const updatedTasks = tasks.map(task =>
-          task.id === updatedTask.id ? updatedTask : task
-        );
+        const updatedTasks = tasks.map(task => (task.id === updatedTask.id ? updatedTask : task));
         setTasks(updatedTasks);
       } else {
         console.error('Failed to update task');

@@ -6,7 +6,6 @@ The "Task Manager" project is a simple web application for managing tasks. It al
 
 The application is hosted at: [https://ornate-lollipop-5553e6.netlify.app/](https://ornate-lollipop-5553e6.netlify.app/)
 
-
 ## Getting Started
 
 To get started with the project, follow these steps:
@@ -32,6 +31,7 @@ npm run dev
 - Open in Browser: Once the server is running, open your web browser and navigate to http://127.0.0.1:5173/ to view the project.
 
 ## Features
+
 - **Modern Tooling:** Utilizes Vite for fast development and builds.
 - **TypeScript:** Provides type safety and enhanced developer experience.
 - **React:** Frontend framework for building user interfaces.
@@ -57,7 +57,9 @@ todos/
 ```
 
 ## Contributing
+
 Contributions to the project are welcome. Feel free to submit bug reports, feature requests, or pull requests.
 
 ## License
+
 This project is licensed under the MIT License.
