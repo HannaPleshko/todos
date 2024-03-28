@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+echo \”[Husky] pre-commit\”
+
+npm run format && git add -A
